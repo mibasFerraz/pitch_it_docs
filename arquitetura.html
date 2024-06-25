@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Arquitetura - Pitch It!</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>Pitch It!</strong> <span>Docs</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="docs.html">Docs</a></li>
+							<li><a href="app.html">App</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Arquitetura</h1>
+									</header>
+									<p><strong>1. Introdução</strong></p>
+									<p><strong>1.1. Finalidade</strong></p>
+									<p>Este documento tem como objetivo fornecer uma visão geral da arquitetura do sistema web Pitch It!. Apresenta de forma clara o fluxo de dados, o comportamento da aplicação e como as partes se relacionam, bem como expor de maneira objetiva as decisões arquiteturais que foram tomadas em relação ao projeto.</p>
+									<p><strong>1.2. Escopo</strong></p>
+									<p>Este documento de arquitetura se aplica ao Pitch It!. Estão descritos neste documento os padrões de arquitetura adotados, frameworks e linguagens escolhidas.</p>
+									<p><strong>1.3. Definições, Acrônimos e Abreviações</strong></p>
+									<ul>
+										<li><strong>API</strong> - Application Programming Interface: conjunto de rotinas e padrões de programação que viabiliza a comunicação entre dois sistemas ou plataformas distintas.</li>
+										<li><strong>HTTP</strong> - Hypertext Transfer Protocol: protocolo de transferência e comunicação de dados.</li>
+										<li><strong>Backend</strong> - Parte da aplicação responsável pela conexão com o banco de dados e gerência das informações que serão enviadas ao frontend.</li>
+										<li><strong>Frontend</strong> - Parte da aplicação responsável pela interação com o usuário, utilizando recursos consumidos do backend.</li>
+										<li><strong>SSP</strong> - Secretaria de Estado de Segurança Pública.</li>
+										<li><strong>SQL</strong> - Structured Query Language: Linguagem declarativa de busca para bancos de dados relacionais.</li>
+										<li><strong>JSON</strong> - JavaScript Object Notation</li>
+										<li><strong>REST</strong> - Representational State Transfer</li>
+									</ul>
+									<p><strong>2. Representação Geral da Arquitetura</strong></p>
+									<p><img src="assets/assets/arquitetura.png" alt="Diagrama Geral" style="max-width: 100%; max-height: 500px; height: auto;" /></p>
+									<p>A aplicação tem um cliente de frontend web feito em React com auxílio do Vite e três microserviços em seu backend.</p>
+									<p>O primeiro microserviço é o Pitch Service, uma API REST que encaminha a mensagem escrita pelo usuário descrevendo sua startup para uma IA com linguagem natural que entende o contexto e a partir dele gera um pitch de 5 minutos utilizando engenharia de prompt.</p>
+									<p>O segundo microserviço é o Chatbot Service, uma API REST que encaminha as dúvidas descritas pelo usuário logado para uma IA com linguagem natural que entende o contexto e devolve com a melhor resposta disponível.</p>
+									<p>O terceiro microserviço é o User Service, que trata todos os dados dos usuários os enviando para serem armazenados em um banco de dados relacional, MySQL.</p>
+									<p>As comunicações entre todos os componentes são feitas com o protocolo HTTP e o tipo de conteúdo transmitido dentro do sistema é documento JSON.</p>
+									<p><strong>3. Tecnologias</strong></p>
+									<p>O diagrama abaixo mostra quais são as tecnologias usadas em cada parte do sistema. Em seguida, essas tecnologias são descritas brevemente.</p>
+									<p><strong>3.1. React</strong></p>
+									<p><a href="https://reactjs.org/">React</a> é uma biblioteca JavaScript desenvolvida pelo Facebook para criar interfaces de usuário (UIs) dinâmicas e interativas. Utiliza uma abordagem baseada em componentes, permitindo que desenvolvedores construam componentes encapsulados que gerenciam seu próprio estado e se combinam para formar interfaces complexas.</p>
+									<p><strong>3.2. Vite</strong></p>
+									<p><a href="https://vitejs.dev/">Vite</a> é uma ferramenta de build desenvolvida por Evan You, o criador do Vue.js, que oferece uma experiência de desenvolvimento rápida e eficiente para projetos web. Ele utiliza ESBuild para iniciar um servidor de desenvolvimento quase instantaneamente e oferece Hot Module Replacement (HMR) para atualizações de código em tempo real.</p>
+									<p><strong>3.3. Tailwind CSS</strong></p>
+									<p><a href="https://tailwindcss.com/">Tailwind CSS</a> é um framework CSS utilitário que facilita a criação de designs modernos e responsivos sem escrever CSS personalizado. Em vez de classes pré-estilizadas, Tailwind oferece uma vasta coleção de classes utilitárias de baixo nível que podem ser combinadas diretamente no HTML para construir qualquer design de forma eficiente.</p>
+									<p><strong>3.4. MySQL</strong></p>
+									<p><a href="https://mysql.com/">MySQL</a> é um sistema de gerenciamento de banco de dados relacional (RDBMS) open-source amplamente utilizado, desenvolvido pela Oracle Corporation. Utiliza a linguagem SQL (Structured Query Language) para gerenciar e manipular dados em tabelas relacionais. MySQL é conhecido por sua alta performance, confiabilidade e facilidade de uso, sendo uma escolha popular para aplicações web, desde pequenos sites até grandes plataformas de e-commerce.</p>
+									<p><strong>4. Requisitos e Restrições de Arquitetura</strong></p>
+									<ul>
+										<li>Aplicação deve ser construída baseada na arquitetura de microsserviços, na qual o backend será desenvolvido em Java e o frontend em Vite + React.</li>
+										<li>O aplicativo será funcional em notebooks e desktops com qualquer sistema operacional que tenha acesso à um navegador.</li>
+										<li>O desktop necessita de conexão estável de internet para uso completo e atualizado do aplicativo.</li>
+									</ul>
+									<p><strong>5. Frontend</strong></p>
+									<p>O frontend está sendo implementado com uma organização em que cada módulo possui responsabilidades bem definidas, facilitando assim a manutenção e evolução do código:</p>
+									<ul>
+										<li><strong>App.tsx</strong> - Arquivo que chama o componente principal do app que são as rotas.</li>
+										<li><strong>src/</strong> - Diretório que contém basicamente todo o código fonte.</li>
+										<li><strong>routes.tsx</strong> - Arquivo responsável por carregar todas as telas. Para isso ele utiliza os módulos de navigation e de screens.</li>
+										<li><strong>navigation/</strong> - Diretório que controla o fluxo de navegação entre as telas através *tab bottom bar*. Então ele faz uso do componente de screens.</li>
+										<li><strong>screens/</strong> - Contêm as telas da aplicação. Para que as telas funcionem corretamente, esse módulo utiliza os diretórios de services, de componentes e o de utils.</li>
+										<li><strong>services/</strong> - Diretório que contém os endpoints necessários para realizar as requisões feitas no app.</li>
+										<li><strong>components/</strong> - Inclue os componentes que são comuns às telas da aplicação. Os componentes podem ser modals, inputs de formulários, botões, etc.</li>
+										<li><strong>utils/</strong> - Armazena funções utilitárias reutilizáveis que serão disponibilizadas para todo o frontend.</li>
+										<li><strong>hooks/</strong> - Diretório onde estão os gerenciandores de estado do usuário</li>
+										<li><strong>@types/</strong> - Onde ficam algumas tipagens internas customizadas</li>
+									</ul>
+									<p><strong>6. Referências</strong></p>
+									<ul>
+										<li>JUNIOR, Cleber; LUI, Brian; HORINOUCHI, Lucas; SOUZA, Rômulo; HERONILDO, Francisco; TOYOSHIMA, Filipe; ALVES, Vitor; APOLINÁRIO, Jacó. Projeto HubCare: Documento de Arquitetura. Disponível em: <a href="https://cjjcastro.gitlab.io/2019-1-hubcare-docs/project/architecture-document/#5-visao-de-implementacao">https://cjjcastro.gitlab.io/2019-1-hubcare-docs/project/architecture-document/#5-visao-de-implementacao</a>.</li>
+										<li>LIMA, Alan; BERNARDO, Elias; MARQUES, Guilherme; BARREIROS, Leonardo; BLANCO, Matheus; FÉO, Pedro; RODRIGUES, Pedro; KADER, Saleh; SILVA, Sara; ALCÂNTARA, Shayane. Projeto QR Comer: Documento de Arquitetura. Disponível em: <a href="https://fga-desenho-2019-2.github.io/Wiki/seminario5/arquitetura/">https://fga-desenho-2019-2.github.io/Wiki/seminario5/arquitetura/</a>.</li>
+										<li>MENDES, Iasmin; VALÉRIO, Renato; JOÃO, Lucas; DAVI, Gabriel; SOUZA, Sousa; MACIEL, Lucas; FERNANDES, Weiller; GOMES, Matheus. Projeto Indica AI: Documento de Arquitetura. Disponível em: <a href="https://fga-eps-mds.github.io/2018.2-IndicaAi//docs/2018/08/28/architecture-doc.html">https://fga-eps-mds.github.io/2018.2-IndicaAi//docs/2018/08/28/architecture-doc.html</a>.</li>
+										<li>MIGUEL, Alexandre; ALVES, Davi; GUEDES, Gabriela; GOULART, Helena; ROBSON, João; MENEZES, Leticia; GUILHERME, Luiz; SCHADT, Renan; VINICIUS, Rômulo; HUGO, Victor. Projeto Translate.me: Documento de Arquitetura. Disponível em: <a href="https://translate-me.github.io/docs/documentos/projeto/doc_de_arquitetura/">https://translate-me.github.io/docs/documentos/projeto/doc_de_arquitetura/</a>.</li>
+									</ul>
+									<p><strong>Histórico de Revisão</strong></p>
+									<table>
+										<thead>
+											<tr>
+												<th>Data</th>
+												<th>Versão</th>
+												<th>Descrição</th>
+												<th>Autor</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>25/06/2024</td>
+												<td>1.0</td>
+												<td>Criação do documento</td>
+												<td>Lucas Lima Ferraz</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</section>
+
+					</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

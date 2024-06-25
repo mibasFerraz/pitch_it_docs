@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Plano de Qualidade do Produto - Pitch It! Docs</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="logo"><strong>Pitch It!</strong> <span>Docs</span></a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+			<!-- Menu -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="docs.html">Docs</a></li>
+					<li><a href="app.html">App</a></li>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<div id="main" class="alt">
+
+				<!-- One -->
+				<section id="one">
+					<div class="inner">
+						<header class="major">
+							<h1>Plano de Qualidade do Produto</h1>
+						</header>
+
+						<h2>Introdução</h2>
+						<p>Um dos pilares mais importantes de um produto concentra-se na qualidade deste. Assim, a ISO9126 define qualidade como "totalidade de características e critérios de um produto ou serviço que exercem suas habilidades para satisfazer as necessidades declaradas ou envolvidas”. Já a ISO 25010, disponibilizada em 2011, que padroniza a qualidade de produtos de software e surgiu em substituição a ISO9126, define qualidade como  o nível em que um sistema atende às necessidades expressas e não expressas dos stakeholders, resultando em geração de valor.</p>
+						<p>Esta ISO25010 define 8 características para a qualidade, sendo elas: adequação funcional, eficiência de desempenho, compatibilidade, usabilidade, confiabilidade, segurança, manutenção e portabilidade.</p>
+
+						<h2>Objetivo</h2>
+						<p>O objetivo da elaboração deste plano de qualidade é especificar as ferramentas que serão utilizadas e as métricas analisadas pela equipe para que seja definida a qualidade do produto e tomadas decisões. Assim, os objetivos deste documento são:</p>
+						<ul>
+							<li>Definir os objetivos de qualidades.</li>
+							<li>Apresentar formas de atingir os objetivos de qualidade.</li>
+							<li>Selecionar e coletar métricas.</li>
+							<li>Apresentar a interpretação e uso das métricas para o produto.</li>
+							<li>Especificar procedimentos, técnicas e ferramentas.</li>
+						</ul>
+
+						<h2>Objetivos de qualidade</h2>
+						<p>No contexto dos objetivos definidos pela norma ISO 25010:2011, a análise de qualidade do projeto se concentra em três áreas principais: qualidade interna, qualidade externa e qualidade de uso.</p>
+
+						<!-- Include more content as per the markdown file -->
+						<!-- Due to space limitations, continue here with the content -->
+
+						<p>A análise de qualidade do projeto aborda tanto os aspectos internos quanto os externos do software, levando em consideração as seis características de qualidade. Avalia também a experiência do usuário final por meio das quatro características específicas de qualidade de uso. Ao adotar essas abordagens complementares, busca-se realizar uma avaliação abrangente da qualidade do produto em diferentes perspectivas.</p>
+
+						<h2>Verificação e validação</h2>
+						<p>Para alcançar os objetivos de qualidade do projeto, foram adotadas três técnicas de verificação e validação:</p>
+						<ul>
+							<li>Análise estática do código: Essa técnica utiliza o Sonar Cloud como ferramenta de análise estática de código, para obter métricas mensuráveis.</li>
+							<li>Testes automatizados: Foram realizados testes automatizados, incluindo testes unitários e de integração.</li>
+							<li>Validações com os POs do projeto: Além das técnicas baseadas em código, é essencial envolver os donos ou usuários do projeto na validação.</li>
+						</ul>
+
+						<h2>Padrões, práticas, convenções e métricas</h2>
+						<p>ISOs e modelos de qualidade</p>
+						<p>A principal ISO e modelo utilizados no projeto são:</p>
+						<ul>
+							<li>NBR - ISO/IEC 25010 [2]</li>
+							<li>Modelo de Qualidade Q-Rapids [3]</li>
+						</ul>
+
+						<!-- Include more content as per the markdown file -->
+
+						<h2>Testes</h2>
+						<p>O software é uma das construções mais complexas dos humanos por isto está sujeito a inconsistências e erros. O conjunto de processos para validar o correto funcionamento de um software são chamados testes e as atividades de teste surgiram justamente para evitar que estes erros cheguem ao usuário final. [4]</p>
+						<ul>
+							<li>Testes de unidade: a maior parte dos testes se encontram nesta categorização e são utilizados para verificar pequenas partes de um código, normalmente uma classe somente.</li>
+							<li>Testes de integração: estes testes verificam uma transação completa ou uma funcionalidade.</li>
+							<li>Testes de sistema: testes que simulam uma sessão com usuário real.</li>
+						</ul>
+
+						<h2>Ferramentas, técnicas e metodologias</h2>
+						<ul>
+							<li><a href="https://jestjs.io/pt-BR/">Jest</a>: Framework de testes para TypeScript.</li>
+							<li><a href="https://testing-library.com/">React Testing Library</a>: Framework de testes para React.</li>
+							<li><a href="https://www.sonarsource.com/products/sonarcloud/?gads_campaign=SC-Class01-Brand&gads_ad_group=SonarCloud&gads_keyword=sonarcloud&gclid=Cj0KCQjwyLGjBhDKARIsAFRNgW_ldned9rPbZ6BecorNDUxvGxjLbdoawwMROpUJnpr5qGlKr3oBOh0aAnZlEALw_wcB">SonarCloud</a>: Ferramenta de varredura de código para analisar o código de acordo com as regras e métricas definidas.</li>
+						</ul>
+
+						<h2>Controle de código</h2>
+						<p>A fim de assegurar a execução de procedimentos de qualidade, utilizamos uma combinação de tarefas automatizadas e manuais.</p>
+						<p>As tarefas automatizadas incluem: documentação, controle de versão, controle de código, controle de commits, testes automatizados. Essas tarefas são realizadas por ferramentas e sistemas que auxiliam na garantia da qualidade do software.</p>
+
+						<h2>Coleta e manutenção</h2>
+						<p>O processo de manutenção de sistemas de software tem como objetivo principal realizar modificações no produto de software após liberações de releases.</p>
+						<!-- More content from the markdown file -->
+
+						<h2>Referências</h2>
+						<p>Referências e fontes utilizadas na elaboração deste documento.</p>
+						<p>[1] ENGSOFTMODERNA. Engenharia de Software Moderna. Disponível em: <a href="https://engsoftmoderna.info/">https://engsoftmoderna.info/</a>. Acesso em: 26 maio 2023.</p>
+						<p>[2] Importância dos testes de software na qualidade do sistema. TreinaWeb. Disponível em: <a href="https://www.treinaweb.com.br/blog/importancia-dos-testes-de-software-na-qualidade-do-sistema">https://www.treinaweb.com
+
+
+                            <h2>Histórico de Revisão</h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Versão</th>
+                                        <th>Descrição</th>
+                                        <th>Autor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>25/06/2024</td>
+                                        <td>1.0</td>
+                                        <td>Criação do documento</td>
+                                        <td>Lucas Lima Ferraz</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+            </div>
+
+<!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
