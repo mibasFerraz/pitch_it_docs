@@ -10,7 +10,7 @@ Aqui está toda a documentação realizada do projeto Pitch It! ao longo da disc
 ## Localhost 
 Para rodar localmente o repositório de documentos, utilizar o comando `python3 -m http.server`
 
-Para rodar localmente o repositório de front-end, utilizar o comando `npm run dev` após realizar o clone do repositório https://github.com/mibasFerraz/pitch_it/
+Para rodar localmente o repositório de front-end, utilizar o comando `npm run dev` ou utilizando o docker `sudo docker compose build` e depois `sudo docker-compose up` após realizar o clone do repositório https://github.com/mibasFerraz/pitch_it/
 
 Para rodar localmente o repositório do back-end, utilizar o comando `docker-compose up --build` após realizar o clone do repositório https://gitlab.com/fga-eps/agenday/-/tree/
 
